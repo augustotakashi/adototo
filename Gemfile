@@ -28,6 +28,7 @@ gem 'devise'
 gem 'gravatar_image_tag'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'binding_of_caller'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

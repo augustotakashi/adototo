@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_08_181832) do
+ActiveRecord::Schema.define(version: 2019_11_09_220112) do
 
   create_table "pets", force: :cascade do |t|
     t.string "name"
     t.decimal "age", precision: 5, scale: 2, default: "0.0"
-    t.string "type"
+    t.string "animal"
     t.string "size"
     t.string "sex"
     t.string "location"
@@ -38,10 +38,11 @@ ActiveRecord::Schema.define(version: 2019_11_08_181832) do
     t.datetime "last_sign_in_at"
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
     t.string "name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
+
 end
