@@ -9,4 +9,6 @@ Antes de levantar o servidor:
 2) Instalar Yarn:
 	https://yarnpkg.com/lang/en/docs/install/#windows-stable
 
+3) Instalar Image Magick:
+	https://imagemagick.org/script/download.php
 
