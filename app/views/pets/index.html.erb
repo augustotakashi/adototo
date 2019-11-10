@@ -30,7 +30,7 @@
       <h3 class="fw7 f4 title"><%= link_to pet.name, pet %></h3>
 
       <p class="has-text-gray fg pt1"> Meu atual dono <%= pet.user.name %></p>
-
+      
 
       <% if pet_path(pet) %>
          <%= link_to 'Edit', edit_pet_path(pet), class: "button is-small" %>
