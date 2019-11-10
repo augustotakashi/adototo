@@ -1,3 +1,12 @@
 // Place all the styles related to the Pets controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.pet-show{
+	.feature-image img {
+		width: 100%;
+	}
+	.add-to-cart{
+		width: 100%;
+	}
+}

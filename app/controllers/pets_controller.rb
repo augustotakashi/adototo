@@ -29,7 +29,7 @@ class PetsController < ApplicationController
 
     respond_to do |format|
       if @pet.save
-        format.html { redirect_to @pet, notice: 'Pet was successfully created.' }
+        format.html { redirect_to @pet, notice: 'Pet foi registrado com sucesso!' }
         format.json { render :show, status: :created, location: @pet }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class PetsController < ApplicationController
   def update
     respond_to do |format|
       if @pet.update(pet_params)
-        format.html { redirect_to @pet, notice: 'Pet was successfully updated.' }
+        format.html { redirect_to @pet, notice: 'Pet foi atualizado com sucesso!' }
         format.json { render :show, status: :ok, location: @pet }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class PetsController < ApplicationController
   def destroy
     @pet.destroy
     respond_to do |format|
-      format.html { redirect_to pets_url, notice: 'Pet was successfully destroyed.' }
+      format.html { redirect_to pets_url, notice: 'Pet foi deletado com sucesso' }
       format.json { head :no_content }
     end
   end
@@ -70,6 +70,6 @@ class PetsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pet_params
-      params.require(:pet).permit(:name, :age, :type, :size, :sex, :location, :owner, :description, :image)
+      params.require(:pet).permit(:name, :age, :breed, :type, :size, :sex, :location, :owner, :description, :image)
     end
 end

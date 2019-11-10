@@ -14,8 +14,9 @@ ActiveRecord::Schema.define(version: 2019_11_09_220112) do
 
   create_table "pets", force: :cascade do |t|
     t.string "name"
-    t.decimal "age", precision: 5, scale: 2, default: "0.0"
+    t.integer "age"
     t.string "animal"
+    t.string "breed"
     t.string "size"
     t.string "sex"
     t.string "location"
