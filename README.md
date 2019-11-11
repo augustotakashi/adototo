@@ -15,3 +15,4 @@ Antes de levantar o servidor:
 	- Dar check em todas as cxs na instalação
 	- Link: https://imagemagick.org/script/download.php
 
+5) Prompt: rails db:schema:load
