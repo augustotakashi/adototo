@@ -10,7 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_09_220112) do
+ActiveRecord::Schema.define(version: 2019_11_11_185133) do
+
+  create_table "carts", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "line_items", force: :cascade do |t|
+    t.integer "pets_id", null: false
+    t.integer "cart_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "quantity", default: 1
+    t.index ["cart_id"], name: "index_line_items_on_cart_id"
+    t.index ["pets_id"], name: "index_line_items_on_pets_id"
+  end
 
   create_table "pets", force: :cascade do |t|
     t.string "name"
@@ -46,4 +61,5 @@ ActiveRecord::Schema.define(version: 2019_11_09_220112) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "line_items", "pets", column: "pets_id"
 end
