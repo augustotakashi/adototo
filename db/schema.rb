@@ -18,13 +18,13 @@ ActiveRecord::Schema.define(version: 2019_11_11_185133) do
   end
 
   create_table "line_items", force: :cascade do |t|
-    t.integer "pets_id", null: false
+    t.integer "pet_id", null: false
     t.integer "cart_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "quantity", default: 1
     t.index ["cart_id"], name: "index_line_items_on_cart_id"
-    t.index ["pets_id"], name: "index_line_items_on_pets_id"
+    t.index ["pet_id"], name: "index_line_items_on_pet_id"
   end
 
   create_table "pets", force: :cascade do |t|
@@ -61,5 +61,4 @@ ActiveRecord::Schema.define(version: 2019_11_11_185133) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "line_items", "pets", column: "pets_id"
 end
