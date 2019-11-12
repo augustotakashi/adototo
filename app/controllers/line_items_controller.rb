@@ -1,9 +1,7 @@
 class LineItemsController < ApplicationController
   include CurrentCart
-
   before_action :set_line_item, only: [:show, :edit, :update, :destroy]
   before_action :set_cart, only: [:create]
-
 
   # GET /line_items
   # GET /line_items.json
@@ -62,7 +60,7 @@ class LineItemsController < ApplicationController
     @cart = Card.find(session[:cart_id])
     @line_item.destroy
     respond_to do |format|
-      format.html { redirect_to cart_path@cart, notice: 'Line item was successfully destroyed.' }
+      format.html { redirect_to cart_path(@cart), notice: 'Line item was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

@@ -3,7 +3,7 @@ class Cart < ApplicationRecord
 	
 
 	def add_pet(pet)
-		current_item = line.items.find_by(pet_id: pet.id)
+		current_item = line_items.find_by(pet_id: pet.id)
 		if current_item
 			current_item.increment(:quantity)
 		else
