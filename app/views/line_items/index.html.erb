@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Line Items</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pet</th>
+      <th>Cart</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @line_items.each do |line_item| %>
+      <tr>
+        <td><%= line_item.pet %></td>
+        <td><%= line_item.cart %></td>
+        <td><%= link_to 'Mostrar', line_item %></td>
+        <td><%= link_to 'Editar', edit_line_item_path(line_item) %></td>
+        <td><%= link_to 'Limpar', line_item, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Line Item', new_line_item_path %>
