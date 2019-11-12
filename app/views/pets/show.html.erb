@@ -79,12 +79,12 @@
       <div class="bg-white pa4 border-radius-3">
         <h4 class="title is-5 has-text-centered"><%= (@pet.name) %></h4>
         <p class="has-text-centered mb4">Dono: <%= @pet.user.name %></p>
-        <%= button_to 'Adotar' ,line_items_path(pet_id: @pet) %>
+        <%= button_to 'Adotar' ,line_items_path(pet_id: @pet), class: 'button is-warning add-to-cart'%>
       </div>
     </div>
   </div>
 
   <% if pet_path(@pet) %>
-    <%= link_to 'Edit', edit_pet_path(@pet), class: 'button' %>
+    <%= link_to 'Editar', edit_pet_path(@pet), class: 'button' %>
   <% end %>
 </section>

@@ -1,7 +1,8 @@
 <p id="notice"><%= notice %></p>
+<br> 
 
-<h1>Carts</h1>
-
+  <h1> Faça uma adoção</h1>
+</br>
 <table>
   <thead>
     <tr>
@@ -12,9 +13,9 @@
   <tbody>
     <% @carts.each do |cart| %>
       <tr>
-        <td><%= link_to 'Show', cart %></td>
-        <td><%= link_to 'Edit', edit_cart_path(cart) %></td>
-        <td><%= link_to 'Destroy', cart, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%#= link_to 'Mostrar', cart %></td>
+        <td><%#= link_to 'Editar', edit_cart_path(cart) %></td>
+        <td><%#= link_to 'Deletar', cart, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -22,4 +23,4 @@
 
 <br>
 
-<%= link_to 'New Cart', new_cart_path %>
+<%= link_to 'Nova Adoção', pets_path ,class: 'button is-warning add-to-cart'%>
