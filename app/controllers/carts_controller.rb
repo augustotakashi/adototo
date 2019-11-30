@@ -29,7 +29,7 @@ class CartsController < ApplicationController
 
     respond_to do |format|
       if @cart.save
-        format.html { redirect_to @cart, notice: 'Cart was successfully created.' }
+        format.html { redirect_to @cart, notice: 'Lista foi criado com sucesso! ' }
         format.json { render :show, status: :created, location: @cart }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class CartsController < ApplicationController
   def update
     respond_to do |format|
       if @cart.update(cart_params)
-        format.html { redirect_to @cart, notice: 'Cart was successfully updated.' }
+        format.html { redirect_to @cart, notice: 'Lista foi atualizado com sucesso!' }
         format.json { render :show, status: :ok, location: @cart }
       else
         format.html { render :edit }
@@ -75,7 +75,7 @@ class CartsController < ApplicationController
     end
 
     def invalid_cart
-      logger.error "Attempt to access invalid cart #{params[:id]}"
-      redirect_to root_path, notice: "That cart doesn't exist"
+      logger.error "Inválido:  #{params[:id]}"
+      redirect_to root_path, notice: "Não Existe"
     end 
 end

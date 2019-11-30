@@ -16,7 +16,8 @@
 
 $link: #444;
 $link-hover: #222;
-
+@import "bootstrap-sprockets";
+@import "bootstrap";
 @import "bulma";
 @import "functions";
 
