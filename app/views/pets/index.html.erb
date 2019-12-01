@@ -28,7 +28,23 @@
     <div class="pa3">
 
       <h3 class="fw7 f4 title"><%= link_to pet.name, pet %></h3>
+      <% if pet.sex? %>
+      <li class="inline-block pr3">Sexo: <%= pet.sex %></li>
+      <% end %>
 
+      <li class="inline-block pr3"><%= pet.location %></li>
+
+      <% if pet.size? %>
+      <li class="inline-block pr3">Tamanho: <%= pet.size %></li>
+      <% end %>
+
+      <% if pet.age? %>
+      <li class="inline-block pr3"><%= pet.age %> anos </li>
+      <% end %>
+
+      <% if pet.sex? %>
+      <li class="inline-block pr3">Raça: <%= pet.breed %></li>
+      <% end %>
       <p class="has-text-gray fg pt1"> Postado por:  <%= pet.user.name %></p>
       
 
