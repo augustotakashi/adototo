@@ -1,7 +1,5 @@
 <div class="columns align-items-center">
-  <div class="column is-1">
-    <%= line_item.quantity %>
-  </div>
+
   <div class="column is-2">
     <figure class="is-128x128 image">
       <%= image_tag(line_item.pet.image_url(:thumb)) %>
@@ -12,6 +10,16 @@
     <div class="columns align-items-center">
       <div class="content column is-9">
         <%= truncate(line_item.pet.description, length: 140) %>
+      </div>
+    </div>
+    <div class="columns align-items-center">
+      <div class="content column is-6">
+        Entre em contato com 
+        <%= line_item.pet.user.name %> para fazer a adoção
+      </div>
+      <div class="content column is-4">
+        Email:  
+        <%= line_item.pet.user.email %> 
       </div>
     </div>
   </div>
