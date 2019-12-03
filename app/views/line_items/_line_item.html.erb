@@ -1,5 +1,4 @@
 <div class="columns align-items-center">
-
   <div class="column is-2">
     <figure class="is-128x128 image">
       <%= image_tag(line_item.pet.image_url(:thumb)) %>
@@ -26,6 +25,8 @@
 </div>
 
 <div class="has-text-right">
+  <!--<%= link_to 'Mandar Email para o Dono', maile_path, method: :post, data: { confirm: "Tem certeza que deseja mandar email para o dono, mostrando o seu interesse pelo pet? " }, class: "button is-small is-dark mb4" %>
+-->
   <%= link_to 'Remover', line_item, method: :delete, data: { confirm: "Tem certeza? " }, class: "button is-small mb4" %>
 </div>
 

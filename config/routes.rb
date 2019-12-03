@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   resources :line_items
-  resources :carts
   resources :pets
+  post 'line_items/maile', to: 'line_items#maile', as: 'maile'
+  resources :carts
+  
   devise_for :users, controllers: {
   	registrations: 'registrations'
   }

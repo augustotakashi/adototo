@@ -26,12 +26,12 @@ class LineItemsController < ApplicationController
   # POST /line_items
   # POST /line_items.json
   def create
-    pet = Pet.find(params[:pet_id])
-    @line_item = @cart.add_pet(pet)
-
+    @pet = Pet.find(params[:pet_id])
+    @line_item = @cart.add_pet(@pet)
+    AdocaoMailer.adocao_email(@pet,@pet.user).deliver
     respond_to do |format|
       if @line_item.save
-        format.html { redirect_to @line_item.cart, notice: 'Item added to cart.' }
+        format.html { redirect_to @line_item.cart, notice: 'Pet favoritado' }
         format.json { render :show, status: :created, location: @line_item }
       else
         format.html { render :new }
@@ -45,7 +45,7 @@ class LineItemsController < ApplicationController
   def update
     respond_to do |format|
       if @line_item.update(line_item_params)
-        format.html { redirect_to @line_item, notice: 'Line item was successfully updated.' }
+        format.html { redirect_to @line_item }
         format.json { render :show, status: :ok, location: @line_item }
       else
         format.html { render :edit }
@@ -60,10 +60,12 @@ class LineItemsController < ApplicationController
     @cart = Cart.find(session[:cart_id])
     @line_item.destroy
     respond_to do |format|
-      format.html { redirect_to cart_path(@cart), notice: 'Line item was successfully destroyed.' }
+      format.html { redirect_to cart_path(@cart)}
       format.json { head :no_content }
     end
   end
+
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
