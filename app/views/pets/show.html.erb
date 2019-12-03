@@ -75,15 +75,20 @@
       </table>
     </div>
     </div>
-    <div class="column is-3 is-offset-1">
-      <div class="bg-white pa4 border-radius-3">
-        <h4 class="title is-5 has-text-centered"><%= (@pet.name) %></h4>
-        <p class="has-text-centered mb4">Dono: <%= @pet.user.name %></p>
-        <%= button_to 'Favoritar' ,line_items_path(pet_id: @pet), class: 'button is-warning add-to-cart'%>
+    <% if user_signed_in? %>
+      <div class="column is-3 is-offset-1">
+        <div class="bg-white pa4 border-radius-3">
+          <h4 class="title is-5 has-text-centered"><%= (@pet.name) %></h4>
+          <p class="has-text-centered mb4">Dono: <%= @pet.user.name %></p>
+
+          <%= button_to 'Favoritar' ,line_items_path(pet_id: @pet), class: 'button is-warning add-to-cart'%>
+        </div>
       </div>
-    </div>
+    <% end%>
   </div>
-  <% if pet_path(@pet) %>
-    <%= link_to 'Editar', edit_pet_path(@pet), class: 'button' %>
+  <% if user_signed_in? %>
+    <% if pet_path(@pet) %>
+      <%= link_to 'Editar', edit_pet_path(@pet), class: 'button' %>
+    <% end %>
   <% end %>
 </section>
