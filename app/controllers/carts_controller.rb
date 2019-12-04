@@ -79,7 +79,7 @@ class CartsController < ApplicationController
     end
 
     def invalid_cart
-      logger.error "Não existe lista #{params[:id]}"
+      logger.error "Não existe lista"
       redirect_to root_path, notice: "Esta lista não existe"
     end 
 end
