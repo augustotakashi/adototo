@@ -18,7 +18,7 @@
 
 	def not_referenced_by_any_line_item
 		unless line_items.empty?
-			errors.add(:base, "Line items present")
+			errors.add(:base, "Presente")
 			throw :abort
 		end
 	end
