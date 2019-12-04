@@ -38,6 +38,10 @@
       <li class="inline-block pr3">Tamanho: <%= pet.size %></li>
       <% end %>
 
+      <% if pet.animal? %>
+      <li class="inline-block pr3">Animal: <%= pet.animal %></li>
+      <% end %>
+
       <% if pet.age? %>
       <li class="inline-block pr3"><%= pet.age %> anos </li>
       <% end %>

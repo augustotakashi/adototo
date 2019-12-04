@@ -89,6 +89,7 @@
   <% if user_signed_in? %>
     <% if pet_path(@pet) %>
       <%= link_to 'Editar', edit_pet_path(@pet), class: 'button' %>
+
     <% end %>
   <% end %>
 </section>
