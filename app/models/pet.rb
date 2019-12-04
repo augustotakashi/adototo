@@ -12,7 +12,7 @@
 	ANIMAL = %w{ Cachorro Gato }
 	SIZE = %w{ P M G }
 	SEX = %w{ M F }
-	BREED = %w{ Pug Maltês ShihTzu Buldog PitBull Dachshund Pastor-Alemão Basset Schnauzer Poodle Rottweiler Labrador Pinscher Golden Yorkshire Beagle Vira-lata Outro }
+	BREED = %w{ Pug Maltês ShihTzu Buldog PitBull Dachshund Pastor-Alemão Basset Schnauzer Poodle Rottweiler Labrador Pinscher Golden Yorkshire Beagle Abissínio Angorá Balinês Bengal Bobtail Bombay Burmês Chartreux-Colorpoint Cornish-Rex Curl Americano Devon Rex Himalaio Jaguatirica Javanês Korat LaPerm Maine-Coon Manx Mau-Egípcio Mist-Australiano Munchkin Norueguês-da-Floresta Pelo-curto Persa Pixie-bob Ragdoll Ocicat Russo-Azul Sagrado-da-Birmânia Savannah Scottish Fold Selkirk-Rex Siamês Siberiano Singapura Somali Sphynx Thai Tonquinês Toyger Usuri Vira-lata Outro }
 
 	private
 
